@@ -1,10 +1,24 @@
 # 🔧 DTOOLS Staking — Dogechain
 
-Stake DTOOLS tokens on Dogechain and earn rewards. A clean, dark-themed dApp with real-time staking dashboard, rewards tracking, and emergency withdrawal support.
+> **Community-built fallback staking interface for DTOOLS tokens on Dogechain.**
+
+The official DogeTools website went offline, leaving holders unable to unstake or withdraw their tokens through the usual UI. **Your tokens are safe on-chain** — the smart contract is still fully functional. This dApp was built to give the community a way to access their staked DTOOLS while the official site is being restored.
 
 **Live on Vercel →** [dtools-staking.vercel.app](https://dtools-staking.vercel.app)
 **Block Explorer →** [explorer.dogechain.dog](https://explorer.dogechain.dog/)
 **Contract →** [`0x7cc5...2416`](https://explorer.dogechain.dog/address/0x7cc5fb5a99e51b2748a3ee2313e18f4f65b62416)
+
+### Why this exists
+
+- The DogeTools front end went down unexpectedly
+- Community members had no way to unstake, claim rewards, or emergency withdraw
+- All funds remain on-chain — only the website was affected
+- This interface connects to the **same verified smart contract** using the ABIs from Dogechain Blockscout
+- Built by [DBOT](https://www.dbot.dog/) as a community service — no affiliation with DogeTools
+
+### Is this safe?
+
+Yes. This is a **read-only frontend** — it never holds your tokens, never asks for your seed phrase, and never routes transactions through any intermediary. All actions are signed by your own wallet and sent directly to the Dogechain staking contract. The source code is fully open for audit.
 
 ---
 
