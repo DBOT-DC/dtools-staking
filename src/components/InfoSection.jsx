@@ -77,25 +77,21 @@ export default function InfoSection() {
             <p>Stake your DTOOLS tokens in the staking contract to earn rewards at the current APY rate. 
             Rewards accumulate over time based on your staked amount and the APY.</p>
           </FAQItem>
-          <FAQItem question="What is the exit penalty?">
-            <p>There is a 10% exit penalty when you withdraw your staked tokens. This means you'll receive 90% of your staked amount. 
-            The penalty goes to the reward pool to fund future rewards for other stakers.</p>
+          <FAQItem question="How do I claim my rewards?">
+            <p>Rewards are automatically claimed when you withdraw. There's no separate claim function —
+            when you call withdraw, you receive your staked tokens plus all accumulated rewards.</p>
           </FAQItem>
           <FAQItem question="What is the transfer tax?">
-            <p>DTOOLS has a 3% transfer tax on all transfers: 1% goes to liquidity and 2% to marketing. 
+            <p>DTOOLS has a 3% transfer tax on all transfers: 1% goes to liquidity and 2% to marketing.
             This means when you stake, the contract receives 97% of the tokens you send. Factor this into your calculations.</p>
-          </FAQItem>
-          <FAQItem question="How do I claim my rewards?">
-            <p>Rewards are automatically claimed when you withdraw. There's no separate claim function — 
-            when you call withdraw, you receive your staked tokens (minus penalty) plus all accumulated rewards.</p>
           </FAQItem>
           <FAQItem question="What is emergency withdraw?">
             <p>Emergency withdraw is a fallback option that allows you to withdraw your staked tokens in case of issues. 
             It may have different behavior than regular withdrawal. Use it only as a last resort.</p>
           </FAQItem>
           <FAQItem question="Is there a lock period?">
-            <p>The lock period is set to 1 second, which effectively means there's no lock period. 
-            You can withdraw at any time (subject to the exit penalty).</p>
+            <p>The lock period is set to 1 second, which effectively means there's no lock period.
+            You can withdraw at any time.</p>
           </FAQItem>
         </div>
 
@@ -152,10 +148,6 @@ export default function InfoSection() {
               <div className="flex justify-between">
                 <span className="text-slate-500">Transfer Tax</span>
                 <span className="text-orange-400">3%</span>
-              </div>
-              <div className="flex justify-between">
-                <span className="text-slate-500">Exit Penalty</span>
-                <span className="text-orange-400">10%</span>
               </div>
               <div className="flex justify-between">
                 <span className="text-slate-500">Lock Period</span>

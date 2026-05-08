@@ -11,7 +11,6 @@ export default function StakePanel({
   allowance,
   symbol,
   apy,
-  exitPenalty,
   lockDuration,
   holderUnlockTime,
   isLoading,
@@ -28,15 +27,10 @@ export default function StakePanel({
   const balanceFloat = tokenBalance ? parseFloat(ethers.formatUnits(tokenBalance, TOKEN_DECIMALS)) : 0;
   const stakedFloat = stakedAmount ? parseFloat(ethers.formatUnits(stakedAmount, TOKEN_DECIMALS)) : 0;
   const stakeAmountFloat = parseFloat(stakeAmount) || 0;
-  const exitPenaltyNum = exitPenalty ? Number(exitPenalty) : 10;
-
   // Estimated rewards calculation: amount * APY / 100 per year
   const apyNum = apy ? Number(apy) : 5;
   const estimatedYearlyReward = stakeAmountFloat * (apyNum / 100);
   const estimatedDailyReward = estimatedYearlyReward / 365;
-
-  // Net amount after penalty for withdrawal
-  const netWithdrawAmount = stakedFloat * (1 - exitPenaltyNum / 100);
 
   // Lock time calculation
   const lockInfo = useMemo(() => {
@@ -241,35 +235,6 @@ export default function StakePanel({
                   </div>
                 </div>
               )}
-
-              {/* Penalty warning */}
-              <div className="flex items-start gap-2 mb-4 p-3 rounded-lg bg-orange-500/5 border border-orange-500/10">
-                <span className="text-orange-400 text-sm mt-0.5">⚠️</span>
-                <div>
-                  <p className="text-xs text-orange-300/80 font-medium">
-                    {exitPenaltyNum}% exit penalty applies on withdrawal.
-                  </p>
-                  <p className="text-xs text-slate-400 mt-1">
-                    You will receive approximately <span className="text-white font-medium">{netWithdrawAmount.toFixed(4)} {symbol}</span> after penalty.
-                  </p>
-                </div>
-              </div>
-
-              {/* Withdraw breakdown */}
-              <div className="mb-4 p-3 rounded-lg bg-slate-800/50 border border-slate-700">
-                <div className="flex justify-between text-sm mb-1">
-                  <span className="text-slate-400">Staked amount:</span>
-                  <span className="text-white">{stakedFloat.toFixed(4)} {symbol}</span>
-                </div>
-                <div className="flex justify-between text-sm mb-1">
-                  <span className="text-slate-400">Penalty ({exitPenaltyNum}%):</span>
-                  <span className="text-orange-400">-{(stakedFloat * exitPenaltyNum / 100).toFixed(4)} {symbol}</span>
-                </div>
-                <div className="border-t border-slate-700 mt-2 pt-2 flex justify-between text-sm">
-                  <span className="text-slate-300 font-medium">You receive:</span>
-                  <span className="text-emerald-400 font-bold">~{netWithdrawAmount.toFixed(4)} {symbol}</span>
-                </div>
-              </div>
 
               {/* Info about how withdraw works */}
               <div className="mb-4 p-3 rounded-lg bg-emerald-500/5 border border-emerald-500/10">

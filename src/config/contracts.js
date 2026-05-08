@@ -21,7 +21,6 @@ export const STAKING_ABI = [
   'function calculateNewRewards() external view returns (uint256)',
   'function deposit(uint256 _amount) external',
   'function emergencyWithdraw() external',
-  'function exitPenaltyPerc() external view returns (uint256)',
   'function holderUnlockTime(address) external view returns (uint256)',
   'function lockDuration() external view returns (uint256)',
   'function owner() external view returns (address)',

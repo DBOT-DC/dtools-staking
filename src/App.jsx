@@ -102,7 +102,6 @@ export default function App() {
           totalStaked={staking.totalStaked}
           apy={staking.apy}
           rewardsRemaining={staking.rewardsRemaining}
-          exitPenalty={staking.exitPenalty}
           symbol={token.symbol}
         />
 
@@ -117,7 +116,6 @@ export default function App() {
               allowance={token.allowance}
               symbol={token.symbol}
               apy={staking.apy}
-              exitPenalty={staking.exitPenalty}
               lockDuration={staking.lockDuration}
               holderUnlockTime={staking.holderUnlockTime}
               isLoading={token.isLoading || staking.isLoading}

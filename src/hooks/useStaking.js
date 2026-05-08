@@ -8,7 +8,6 @@ export function useStaking(account, signer) {
   const [totalStaked, setTotalStaked] = useState(null);
   const [apy, setApy] = useState(null);
   const [rewardsRemaining, setRewardsRemaining] = useState(null);
-  const [exitPenalty, setExitPenalty] = useState(null);
   const [lockDuration, setLockDuration] = useState(null);
   const [holderUnlockTime, setHolderUnlockTime] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -64,17 +63,15 @@ export function useStaking(account, signer) {
     try {
       const provider = getDefaultProvider();
       const contract = getStakingContract(provider);
-      const [ts, apyVal, rr, ep, ld] = await Promise.all([
+      const [ts, apyVal, rr, ld] = await Promise.all([
         contract.totalStaked(),
         contract.apy(),
         contract.rewardsRemaining(),
-        contract.exitPenaltyPerc(),
         contract.lockDuration(),
       ]);
       setTotalStaked(ts);
       setApy(apyVal);
       setRewardsRemaining(rr);
-      setExitPenalty(ep);
       setLockDuration(ld);
     } catch (err) {
       console.error('Error fetching contract data:', err);
@@ -185,7 +182,6 @@ export function useStaking(account, signer) {
     totalStaked,
     apy,
     rewardsRemaining,
-    exitPenalty,
     lockDuration,
     holderUnlockTime,
     isLoading,

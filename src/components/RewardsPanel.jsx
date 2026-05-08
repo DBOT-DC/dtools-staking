@@ -47,7 +47,7 @@ export default function RewardsPanel({
             {isLoading ? 'Confirming...' : `Claim Rewards (${formatTokenAmount(pendingReward, 18, 4)} ${symbol})`}
           </button>
           <p className="text-xs text-slate-500 mt-2 text-center">
-            ⚠️ Claiming rewards withdraws your entire staked position (contract limitation). Your staked tokens will be returned minus the exit penalty.
+            ⚠️ Claiming rewards withdraws your entire staked position (contract limitation). Your staked tokens will be returned along with all accumulated rewards.
           </p>
         </div>
       </div>

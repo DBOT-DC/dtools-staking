@@ -7,4 +7,4 @@ export const BLOCK_EXPLORER = 'https://explorer.dogechain.dog/';
 export const TOKEN_DECIMALS = 18;
 export const POLL_INTERVAL = 15000; // 15 seconds
 export const TRANSFER_TAX_PERCENT = 3;
-export const EXIT_PENALTY_PERCENT = 10;
+
