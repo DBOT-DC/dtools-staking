@@ -27,8 +27,8 @@ Yes. This is a **read-only frontend** — it never holds your tokens, never asks
 - **Wallet Connect** — MetaMask / injected EVM wallets with auto network detection (Chain ID 2000)
 - **Stake / Unstake** — Lock DTOOLS tokens with configurable lock period and APY
 - **Rewards Dashboard** — Real-time pending rewards, total staked (TVL), rewards remaining
-- **Exit Penalty Display** — Transparent fee info before you withdraw
-- **Emergency Withdraw** — Break the lock with penalty if needed
+- **Withdraw** — Withdraw your full staked balance plus all accumulated rewards
+- **Emergency Withdraw** — Fallback option to retrieve staked tokens
 - **Responsive** — Mobile-first dark UI with Tailwind v4
 
 ## Tech Stack
